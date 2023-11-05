@@ -225,7 +225,7 @@ if rService:IsClient() then -- OnClientEvent only works clientside
 				runTween(true) -- run as a queued tween
 			elseif purpose == "StopTween" then
 				if runningTweens[instance] ~= nil then -- check that the tween exists
-					runningTweens[instance]:Stop() -- stop the tween
+					runningTweens[instance]:Cancel() -- stop the tween
 					runningTweens[instance] = nil -- delete from table
 				else
 					warn("Tween being stopped does not exist.")
